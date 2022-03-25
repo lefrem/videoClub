@@ -2,9 +2,11 @@ package com.example.demo;
 
 import com.example.demo.dao.DaoFactory;
 import com.example.demo.dao.base.AlbumDao;
+import com.example.demo.dao.base.JeuxVideoDao;
 import com.example.demo.dao.base.MovieDao;
 import com.example.demo.dao.base.UserDao;
 import com.example.demo.dao.entity.Album;
+import com.example.demo.dao.entity.JeuxVideo;
 import com.example.demo.dao.entity.Movie;
 import com.example.demo.dao.entity.User;
 
@@ -37,5 +39,10 @@ public class AppListener implements ServletContextListener {
         albumDao.save(new Album("thriller de michael jackson", 6, LocalDate.ofYearDay(1983, 1), 5));
         albumDao.save(new Album("No.6 Collaboration Project", 50, LocalDate.ofYearDay(2016, 1), 5));
         albumDao.save(new Album("Loose Change", 32, LocalDate.ofYearDay(2011, 1), 5));
+
+        JeuxVideoDao jeuxVideoDao = DaoFactory.getJeuxVideoDao();
+        jeuxVideoDao.save(new JeuxVideo("God of War",LocalDate.ofYearDay(2018,1),5));
+        jeuxVideoDao.save(new JeuxVideo("Tom Clancy's The Division",LocalDate.ofYearDay(2016,1),5));
+        jeuxVideoDao.save(new JeuxVideo("Kirby et le monde oublié",LocalDate.ofYearDay(2022,1),5));
     }
 }

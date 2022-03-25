@@ -1,6 +1,7 @@
 package com.example.demo.dao;
 
 import com.example.demo.dao.base.AlbumDao;
+import com.example.demo.dao.base.JeuxVideoDao;
 import com.example.demo.dao.base.MovieDao;
 import com.example.demo.dao.base.UserDao;
 
@@ -20,5 +21,9 @@ public final class DaoFactory {
 
     public static AlbumDao getAlbumDao() {
         return new MemoryAlbumDao();
+    }
+
+    public static JeuxVideoDao getJeuxVideoDao() {
+        return new MemoryJeuxVideoDao();
     }
 }
